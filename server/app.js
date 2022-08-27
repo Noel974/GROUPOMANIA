@@ -1,7 +1,6 @@
 const express = require('express')
-require ("dotenv").config()
 
-
+const dotenv = require ('dotenv') 
 /*** importer helmet pour sécuriser HTTP headers ***/
 
 const helmet = require("helmet");
