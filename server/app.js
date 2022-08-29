@@ -16,6 +16,15 @@ const limiter = rateLimit({
 const app = express(); /*** appeler express pour créer notre application express ***/
 
 
-app.listen(3000, (req, res)=> {
-    console.log('"Server connexion...')
-})
+/*** Middleware général/ configurer des Headers sur l'objet réponse pour eviter les erreurs du CORS (Cross Origin Resource Sharing)
+    et assurer que le front-end pourra effectuer des appels vers l'application en toute sécurité.  ***/
+
+
+/***Importetr les routes à notre application */
+
+/*** securisé les en-têtes HTTP ***/
+app.use(helmet());
+/*** Cette limite de 40 requêtes toutes les 10 minutes sera effective sur toutes les routes ***/
+app.use(limiter);
+
+module.exports =app;
