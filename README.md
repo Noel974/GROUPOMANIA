@@ -11,22 +11,25 @@ La structure du ssite comporte un dossier client('frontend') et un dossier serve
 La partie serveur est sécuriser selon les méthodes de l'OWASP
 
 Pour la partie serveur l'installation va se produire de la façon suivante 
-                ### Installation 
-                        ### Configuration du backend
-                 -Node.js sur la machine pour cella accéder au site https://nodejs.org/en/ pour télécharger sur l'ordi 
-                 - Création du dossier backend (server) "npm init" 
-                 -Installation du framework express "npm i express"
-                 -Installation du package nodemon pour l'éxution du server" npm i nodemon"
-                 -Multer pour la parie de sauvgarde des images "npm i multer"
-                 -fs
-                 -body-parser
-                 -bcrypt
-                 -cors
-                 -dotenv
-                 -express-rate-limit
-                 -jsonwebtoken
-                
-                        ### Configuation de la vade données 
+               
+ ### Installation 
+ 
+ ### Configuration du backend
+
+         -Node.js sur la machine pour cella accéder au site https://    nodejs.org/en/ pour télécharger sur l'ordi 
+         - Création du dossier backend (server) "npm init" 
+         -Installation du framework express "npm i express"
+         -Installation du package nodemon pour l'éxution du server" npm i nodemon"
+         -Multer pour la parie de sauvgarde des images "npm i multer"
+         -fs
+         -body-parser
+         -bcrypt
+         -cors
+         -dotenv
+         -express-rate-limit
+         -jsonwebtoken
+                                
+### Configuation de la vade données 
                 Toujours dans le dossier server(backend)
 On installera tous la partie qui concerne la configuration de la base de données 
                 -Mysql
