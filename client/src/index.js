@@ -1,7 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './Styles/index.css';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 
-import Rotas from"./Routes/routes"
-ReactDOM.render(<Rotas/>,document.getElementById("root"));
-reportWebVitals();
+import './Styles/index.css';
+import * as serviceWorker from"./serviceWorker"
+
+//import App from './App';
+
+const app= ( 
+    <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+ReactDOM.render( app, document.getElementById('root'));
+
+serviceWorker.unregister();

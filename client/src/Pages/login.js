@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
-import '../style/form.css'
+//import '../style/form.css'
 // import DataContext from '../DataContext'
 import { Link } from 'react-router-dom'
 
@@ -87,7 +87,7 @@ export default function Login() {
                         {wrongPassword ? <PasswordErr /> : null}
                     </div>
 
-                    <button className="submit-btn-login" onClick={() => login, () => emailValidation(email, password)}>SUBMIT</button>
+                    {/* <button className="submit-btn-login" onClick={() => login, () => emailValidation(email, password)}>SUBMIT</button> */}
 
                 </div>
 

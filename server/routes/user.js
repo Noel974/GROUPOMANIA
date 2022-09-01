@@ -19,11 +19,11 @@ router.post('/auth/signup', userCtrl.signup);
 router.post('/auth/login', userCtrl.login);
 
 /*** récupérer le profile ***/
-router.get('/users/:id', auth, multer, userCtrl.getProfile);
+router.get('/userw/:id', auth, multer, userCtrl.getProfile);
 /*** récupérer les profiles ***/
-router.get('/users', auth, userCtrl.getAllProfiles);
+router.get('/userw', auth, userCtrl.getAllProfiles);
 /*** modifier le profile ***/
-router.put('/users/:id', auth, multer, userCtrl.updateProfile);
+router.put('/userw/:id', auth, multer, userCtrl.updateProfile);
 
 /*** supprimer le profile ***/
 router.delete('/users/:id', auth, multer, userCtrl.deleteProfile);
