@@ -4,7 +4,7 @@ import axios from 'axios';
 import Home from '../Pages/home';
 import Signup from '../pages/Signup';
 import Login from '../pages/Login';
-import SinglePost from '../SinglePost';
+import ArticlePost from '../Pages/ArticlePost';
 
 
 const index = () => {
@@ -16,7 +16,7 @@ const index = () => {
             <Route path='/signup' element = {<Signup/>}/>
             <Route path= '/login' element = {<Login/>}/>
             <Route path='/' element = {<Home/>}/>
-            <Route path='/post/:id' element={<SinglePost />} />
+            <Route path='/post/:id' element={<ArticlePost />} />
           </Routes>
           </BrowserRouter>
         );
