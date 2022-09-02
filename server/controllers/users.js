@@ -20,8 +20,8 @@ const schema = new passwordValidator();
 schema
     .is().min(6) /*** minimum 6 caractères ***/
     .is().max(15) /*** maximum 15 caractères ***/
-    .has().uppercase(2) /*** mot de passe doit contenir des lettres majuscules ***/
-    .has().lowercase(2) /*** mot de passe doit contenir des lettres miniscules  ***/
+    .has().uppercase() /*** mot de passe doit contenir des lettres majuscules ***/
+    .has().lowercase() /*** mot de passe doit contenir des lettres miniscules  ***/
     .has().digits(2) /*** mot de passe doit contenir deux chiffres minimun ***/
     .has().not().spaces() /*** mot de passe ne doit pas avoir d'espace ***/
     .is().not().oneOf(['Passw0rd', 'Password123']); /*** Ces valeurs sont dans la liste noire ***/

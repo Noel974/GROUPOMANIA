@@ -1,17 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-import './Styles/index.css';
-import * as serviceWorker from"./serviceWorker"
 
-//import App from './App';
-
-const app= ( 
-    <BrowserRouter>
-    <App />
-  </BrowserRouter>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <App />
 );
-ReactDOM.render( app, document.getElementById('root'));
-
-serviceWorker.unregister();

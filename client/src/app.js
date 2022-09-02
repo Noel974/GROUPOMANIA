@@ -1,7 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./Styles/index.css";
+import React from 'react';
+import Routes from "./Routes/routes";
+import './Styles/index.css'
 
-import Routes from "./Routes/routes"
+const App = () => {
 
-ReactDOM.render(<Routes/>, document.getElementById("root"));
+  return (
+    <div>
+      <Routes />
+    </div>
+  );
+};
+
+export default App;

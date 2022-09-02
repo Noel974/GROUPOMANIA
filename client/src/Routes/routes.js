@@ -1,15 +1,26 @@
-import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import React from 'react';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import axios from 'axios';
+import Home from '../Pages/home';
+import Signup from '../pages/Signup';
+import Login from '../pages/Login';
+import SinglePost from '../SinglePost';
 
-import Home from "../Pages/home"
-//import Login from "../Pages/Login"
 
-const Routes =() => {
-    return(
-        <BrowserRouter>
-        <Routes>
-            <Route exact path="/" element={Home}></Route>
-        </Routes>
-        </BrowserRouter>
-    )
-}
+const index = () => {
+    axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.token;
+    console.log(axios.defaults.headers.common['Authorization']);
+    return (
+          <BrowserRouter>
+          <Routes>
+            <Route path='/signup' element = {<Signup/>}/>
+            <Route path= '/login' element = {<Login/>}/>
+            <Route path='/' element = {<Home/>}/>
+            <Route path='/post/:id' element={<SinglePost />} />
+          </Routes>
+          </BrowserRouter>
+        );
+      };
+
+
+export default index;
