@@ -39,3 +39,6 @@ On installera tous la partie qui concerne la configuration de la base de donnée
                 pour la création des modèles'User', 'Post', Comment' avec les commande suivantes/
 ### Client
 
+On utlise sass
+Pour l'installation on fera npm i sacss
+ensuite pour la partie compilation 

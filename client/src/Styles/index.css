@@ -1,0 +1,16 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #ecf0f3;
+  height: 100%;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */
