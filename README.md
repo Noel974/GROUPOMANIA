@@ -31,15 +31,16 @@ Pour la partie serveur l'installation va se produire de la façon suivante
                                 
 ### Configuation de la vade données 
 Toujours dans le dossier server(backend)
-On installera tous la partie qui concerne la configuration de la base de données 
-        -Mysql
-        -Squelise et Sequlize CLI
-
-                **On développera la partie de la base de données
-                pour la création des modèles'User', 'Post', Comment' avec les commande suivantes/
+On installera tous la partie qui concerne la configuration de la base de données         
+         
+         -Mysql PHPmyadmin
+         -Squelise et Sequlize CLI
 
 
-                
+ On développera la partie de la base de données pour la création des modèles'User', 'Post', Comment' avec les commande suivantes/
+
+
+
 ### Client
 
 On utlise sass
