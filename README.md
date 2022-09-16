@@ -30,15 +30,25 @@ Pour la partie serveur l'installation va se produire de la façon suivante
          -jsonwebtoken
                                 
 ### Configuation de la vade données 
-                Toujours dans le dossier server(backend)
+Toujours dans le dossier server(backend)
 On installera tous la partie qui concerne la configuration de la base de données 
-                -Mysql
-                -Squelise et Sequlize CLI
+        -Mysql
+        -Squelise et Sequlize CLI
 
                 **On développera la partie de la base de données
                 pour la création des modèles'User', 'Post', Comment' avec les commande suivantes/
+
+
+                
 ### Client
 
 On utlise sass
-Pour l'installation on fera npm i sacss
+Pour l'installation on fera npm i sass
 ensuite pour la partie compilation 
+sass style.scss index.css pour la liason  de style a index 
+sass --watch style.scss index.css pour compiler tous le scss en css
+
+  dossier utlis
+  dans ce dossier on a aura deux ficher important 
+  Auth.js et api.js
+  auth .js  permet utiliser l'échange d'authentification dans mon application. il récupère le jeton du stockage local.pour l'authentification.

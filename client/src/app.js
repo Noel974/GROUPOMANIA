@@ -1,14 +1,17 @@
 import React from 'react';
-import Routes from "./Routes/routes";
-import './Styles/index.css'
+import './styles/styles.scss';
+import Router from './Routes/Router';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer'
 
-const App = () => {
-
+function App() {
   return (
-    <div className="body">
-      <Routes />
+    <div className="App">
+      <Header />
+      <Router />
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;

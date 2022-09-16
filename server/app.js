@@ -1,6 +1,15 @@
 const express = require('express');/*** importer l'express ***/
 const bodyParser = require('body-parser'); /*** importer le bodyParser ***/
 
+/***Importer les routes à notre application */
+/*** importer la route user ***/
+const userRoutes = require('./routes/user');
+/*** importer la route post ***/
+const postRoutes = require('./routes/post');
+/*** importer la route user ***/
+const commentRoutes = require('./routes/comment');
+
+
 require("dotenv").config();
 /*** importer helmet pour sécuriser HTTP headers ***/
 const helmet = require("helmet");
@@ -9,7 +18,7 @@ const { Sequelize } = require('sequelize');
 
 // Option 3: Passing parameters separately (other dialects)
 
-const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
   host: process.env.DB_HOST,
   dialect: "mysql",/* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
 
@@ -17,10 +26,10 @@ const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, pr
 sequelize
   .authenticate()
   .then(() => {
-    console.log('Connection has been established successfully.');
+    console.log('La connexion a été établie avec succès.');
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
+    console.error('Impossible de se connecter à la base de données:', err);
   });
 
 /*** importer le module express-rate-limit pour limiter le nombre de requêtes que peut faire un utilisateur ***/
@@ -43,13 +52,6 @@ const app = express(); /*** appeler express pour créer notre application expres
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS'); /*** d'envoyer des requêtes avec les méthodes mentionnées  ***/
       next();
   });
-/***Importer les routes à notre application */
-/*** importer la route user ***/
-const userRoutes = require('./routes/user');
-/*** importer la route post ***/
-const postRoutes = require('./routes/post');
-/*** importer la route user ***/
-const commentRoutes = require('./routes/comment');
 
 /*** transformation du corps de la requête en objet Javascript utilisable ***/
 app.use(bodyParser.json());
@@ -60,9 +62,9 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 /*** les routes attendues par le frontend ***/
-app.use('/api', userRoutes);
-app.use('/api', postRoutes);
-app.use('/api', commentRoutes);
+app.use('/api/auth', userRoutes);
+app.use('/api/post', postRoutes);
+app.use('/api/comment', commentRoutes);
 
 /*** Cette limite de 40 requêtes toutes les 10 minutes sera effective sur toutes les routes ***/
 app.use(limiter);
