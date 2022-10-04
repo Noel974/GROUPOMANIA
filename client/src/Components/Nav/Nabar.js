@@ -13,7 +13,7 @@ export default function Nav() {
 
   useEffect(() => {
     const dataAxios = async () => {
-      const res = await axios.get(api + '/api/user/' + id, {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user/`+ id, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
