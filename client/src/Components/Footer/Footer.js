@@ -1,5 +1,5 @@
 import React from 'react';
-import logofooter from '../../Assets/log.svg';
+import logofooter from '../../Assets/logo.svg';
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
         height="150"
         width="150"
       />
-      <a className="footer__link" href="#">
+      <a className="footer__link" href='/'>
         Un problème? Contactez un admin{' '}
       </a>
     </footer>

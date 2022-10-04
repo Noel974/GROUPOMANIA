@@ -1,25 +1,35 @@
-const express = require("express");
-const multer = require("../middleware/multer-config");
-// Créer le routeur
+/*** importer express pour avoir le router ***/
+const express = require('express');
+/*** appeler le router avec la méthode express ***/
 const router = express.Router();
+/*** la récupération de  la configuration d'authentification de JsonWebToken ***/
+const auth = require('../middleware/auth');
+const authAdmin = require('../middleware/authAdmin')
+/*** importer multer pour la gestion des images ***/
+const multer = require('../middleware/multer');
+/*** importer le controllers users pour associer les fonctions aux routes ***/
+const userCtrl = require('../controllers/users');
 
-// Import du modèle dans le routeur
-const userCtrl = require("../controllers/users");
-// Import du middleware d'authentification dans le routeur
-const auth = require("../middleware/auth");
-const authAdmin = require('../middleware/authAdmin');
 
-// Import du middleware de validation du mot de passe dans le routeur
-const passwordValidator = require("../middleware/password-validator");
+/*** les routes d'authentification ***/
 
-// Import de nos contrôleurs
-router.post("/signup",passwordValidator, userCtrl.signup);
-router.post("/login", userCtrl.login);
-router.get("/users/:id", auth, userCtrl.getUserProfile);
-router.delete("/users/:id", auth, userCtrl.deleteOneUser);
+/*** créer et enregister un nouvel utilisateur ***/
+router.post('/signup', userCtrl.signup);
+/*** la connection d'un utilisateur ***/
+router.post('/login', userCtrl.login);
+
+/*** récupérer le profile ***/
+router.get('/users/:id', auth, multer, userCtrl.getProfile);
+/*** récupérer les profiles ***/
+router.get('/users', auth, userCtrl.getAllProfiles);
+/*** modifier le profile ***/
+router.put('/users/:id', auth, multer, userCtrl.updateProfile);
+
+/*** supprimer le profile ***/
+router.delete('/users/:id', auth, multer, userCtrl.deleteProfile);
 
 /*** administateur: supprimer le profile d'un utilisateur ***/
-//router.delete('/admin/delete/:id', authAdmin, multer, userCtrl.adminDeleteProfileUser);
+router.delete('/admin/delete/:id', authAdmin, multer, userCtrl.adminDeleteProfileUser);
 
-// Permettre l'export du routeur sur d'autres fichiers
+/*** exporter le router ***/
 module.exports = router;

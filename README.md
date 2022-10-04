@@ -47,7 +47,7 @@ On utlise sass
 Pour l'installation on fera npm i sass
 ensuite pour la partie compilation 
 sass style.scss index.css pour la liason  de style a index 
-sass --watch style.scss index.css pour compiler tous le scss en css
+sass --watch _styles.scss index.css pour compiler tous le scss en css
 
   dossier utlis
   dans ce dossier on a aura deux ficher important 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Log from '../Components/Log/Log';
+import Log from '../components/Log/Log';
 export default function Home() {
   return (
     <div className='home-content'>

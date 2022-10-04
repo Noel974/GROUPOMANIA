@@ -9,7 +9,7 @@ const authAdmin = require('../middleware/authAdmin')
 /*** importer le controllers post pour associer les fonctions aux routes***/
 const postCtrl = require("../controllers/posts");
 /*** importer multer pour la gestion des images ***/
-const multer = require('../middleware/multer-config');
+const multer = require('../middleware/multer');
 
 
 /*** Requête POST pour poster un nouveau post***/

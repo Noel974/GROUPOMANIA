@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { api } from '../Utils/api';
 import pictureProfile from '../Assets/defaultUserPicture.png';
-import NavBar from '../Components/Nav/Navbar';
+import NavBar from '../components/Nav/Nabar';
 import { BiUpload } from 'react-icons/bi';
 export default function Profile() {
   const [userData, setUserData] = useState('');
@@ -202,7 +202,7 @@ export default function Profile() {
                 <img
                   className="__imgPicture"
                   src={pictureProfile}
-                  alt="photo de profil par défaut"
+                  alt="profil par défaut"
                 />
               )}
             </div>

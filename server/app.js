@@ -1,5 +1,4 @@
 const express = require('express');/*** importer l'express ***/
-const bodyParser = require('body-parser'); /*** importer le bodyParser ***/
 
 /***Importer les routes à notre application */
 /*** importer la route user ***/
@@ -53,18 +52,13 @@ const app = express(); /*** appeler express pour créer notre application expres
       next();
   });
 
-/*** transformation du corps de la requête en objet Javascript utilisable ***/
-app.use(bodyParser.json());
 
 /*** création d'un middleware pour indiquer à Express qu'il faut gérer la ressource images de manière statique 
 (un sous-répertoire de notre répertoire de base, __dirname:nom du dossier ) à chaque fois qu'elle reçoit une requête vers la route /images ***/
 //app.use('/Images', express.static(path.join(__dirname, 'Images')));
 app.use(express.json());
 
-/*** les routes attendues par le frontend ***/
-app.use('/api/auth', userRoutes);
-app.use('/api/post', postRoutes);
-app.use('/api/comment', commentRoutes);
+
 
 /*** Cette limite de 40 requêtes toutes les 10 minutes sera effective sur toutes les routes ***/
 app.use(limiter);
@@ -73,6 +67,9 @@ app.use(limiter);
 app.use(helmet());
 
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
+/*** les routes attendues par le frontend ***/
+app.use('/api/auth', userRoutes);
+app.use('/api/post', postRoutes);
+app.use('/api/comment', commentRoutes);
 /*** exporter notre application pour qu'on puisse y accéder dans les autres fichiers de notre projet ***/
 module.exports = app;
