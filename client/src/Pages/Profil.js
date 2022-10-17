@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { api } from '../Utils/api';
 import pictureProfile from '../Assets/defaultUserPicture.png';
-import NavBar from '../components/Nav/Nabar';
+import NavBar from '../components/Nav/Navbar';
 import { BiUpload } from 'react-icons/bi';
 export default function Profile() {
   const [userData, setUserData] = useState('');
@@ -27,7 +27,7 @@ export default function Profile() {
 
   useEffect(() => {
     const dataAxios = async () => {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user/ `+ id, {
+      const res = await axios.get(api + '/api/user/' + id, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export default function Profile() {
   const saveUpdateProfil = (e) => {
     axios
       .put(
-        `${process.env.REACT_APP_API_URL}/api/user/${id}`,
+        `${api}/api/user/${id}`,
         { firstName, lastName, email },
         {
           headers: {
@@ -78,7 +78,7 @@ export default function Profile() {
 
     if (checkType !== null) {
       axios
-        .put(`${process.env.REACT_APP_API_URL}/api/user/${id}`, formData, {
+        .put(`${api}/api/user/${id}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer ${accessToken}`,
@@ -99,7 +99,7 @@ export default function Profile() {
 
   const deleteAccount = () => {
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/api/user/${id}`, {
+      .delete(`${api}/api/user/${id}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'application/json',

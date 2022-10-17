@@ -37,8 +37,11 @@ On installera tous la partie qui concerne la configuration de la base de donnée
          -Squelise et Sequlize CLI
 
 
- On développera la partie de la base de données pour la création des modèles'User', 'Post', Comment' avec les commande suivantes/
-
+ On développera la partie de la base de données pour la création des modèles'User', 'Post', Comment', 'Like' avec les commande suivantes/
+         npx sequelize-cli model:generate --name users --attributes userId:string,postId:string
+        npx sequelize-cli model:generate --name post --attributes userId:string,postId:string
+           npx sequelize-cli model:generate --name comment --attributes userId:string,postId:string
+                npx sequelize-cli model:generate --name like --attributes userId:string,postId:string
 
 
 ### Client

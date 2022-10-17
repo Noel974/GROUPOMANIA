@@ -1,5 +1,5 @@
 import React from 'react';
-import imgNav from '../../Assets/icon-left-font-monochrome-white.svg';
+import imgNav from '../../Assets/icon-left-font-monochrome-black.svg';
 
 export default function Header() {
   return (

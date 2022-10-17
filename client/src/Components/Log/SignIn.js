@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
+
 export default function SignIn() {
   const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ export default function SignIn() {
         password: user.password,
       };
       axios
-        .post(`${process.env.REACT_APP_API_URL}api/auth/login`, data)
+        .post(`${process.env.REACT_APP_API_URL}user/login`, data)
         .then((response) => {
           localStorage.setItem('token', JSON.stringify(response.data));
           navigate('/');
@@ -110,3 +111,4 @@ export default function SignIn() {
     </>
   );
 }
+

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import Logout from '../Log/Log';
 import { FaUserAlt } from 'react-icons/fa';
 import axios from 'axios';
-import { api } from '../../Utils/api';
 
 export default function Nav() {
   const [userData, setUserData] = useState('');

@@ -2,14 +2,25 @@
 @import './_index';
 //utils
 @import './Utils/_variables';
+//Components//
 //header
 @import './Components/_Header';
 //nav
 @import './Components/_Nabar';
 //log
 @import './Components/_Log';
-@import './Pages/_Home';
+@import './Components/Post';
+@import './Components/ScrollToTop';
+@import './Components/Like';
+@import './Components/Card';
+@import './Components/Newpost';
+@import './Components/Comment';
 //footer
 @import './Components/_Footer';
+//page//
 @import './Pages/_Homepage';
-@import'./Pages/Profil';
+@import './Pages/Actus';
+@import './Pages/Homepage';
+@import './Pages/Home';
+@import './Pages/Profil';
+@import './Pages/NotFound';

@@ -25,7 +25,7 @@ export default function Signup() {
     };
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}api/auth/signup`, data)
+      .post(`${process.env.REACT_APP_API_URL}user/signup`, data)
       .then((res) => {
         if (res.data.error) {
           errorUser.innerHTML = 'Cette email est déjà utilisée';

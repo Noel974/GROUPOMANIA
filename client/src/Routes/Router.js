@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Commentaire from '../pages/Commentaire';
+import Actus from '../pages/Actus';
 import Profil from '../pages/Profil';
 import NotFound from '../pages/NotFound';
 import Post from '../components/Posts/Post';
@@ -13,7 +13,7 @@ export default function Router() {
     <Routes>
       <Route path="/home" element={<HomePage />} />
       <Route element={<Auth />}>
-        <Route path="/" element={<Commentaire />} />
+        <Route path="/" element={<Actus />} />
         {<Route path="/post/:postId" element={<Post />} />}
         <Route path="/profil/:id" element={<Profil />} />
       </Route>

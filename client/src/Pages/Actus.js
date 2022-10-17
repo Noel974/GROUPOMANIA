@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import NavBar from '../components/Nav/Nabar';
+import NavBar from '../components/Nav/Navbar';
 import Cardpost from '../components/Posts/Cardpost';
 import Newpost from '../components/Posts/Newpost';
 import ScrollToTop from '../components/Posts/ScrollToTop';
@@ -8,7 +8,7 @@ import { getAllPost, allComment } from '../Actions/postAction';
 
 export default function Actus() {
   const dispatch = useDispatch();
-  const { postArray, commentArray } = useSelector((state) => ({
+  const { postArray } = useSelector((state) => ({
     ...state.postReducer,
     ...state.commentReducer,
   }));
@@ -38,7 +38,7 @@ export default function Actus() {
     }
     allPosts();
     allComments();
-  }, []);
+  } );
 
   return (
     <>

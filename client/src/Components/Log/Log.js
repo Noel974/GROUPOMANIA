@@ -18,6 +18,7 @@ export default function Log() {
   return (
     <>
       <div className="connection-form">
+      
         <ul>
           <li
             onClick={handleModals}
@@ -38,6 +39,7 @@ export default function Log() {
         </ul>
         {signInModal && <SignIn />}
         {signUpModal && <SignUp />}
+        
       </div>
     </>
   );
