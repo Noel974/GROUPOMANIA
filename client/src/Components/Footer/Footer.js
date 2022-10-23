@@ -1,20 +1,31 @@
-import React from 'react';
-import logofooter from '../../Assets/logo.svg';
 
-export default function Footer() {
-  return (
-    <footer className="footer">
-      <img
-        className="footer__logo"
-        src={logofooter}
-        alt="logo groupomania"
-        style={{ height: 150, width: 150 }}
-        height="150"
-        width="150"
-      />
-      <a className="footer__link" href='/'>
-        Un problème? Contactez un admin{' '}
-      </a>
-    </footer>
-  );
+function Footer ({ isNotLogged }) {
+
+    let getToken = JSON.parse(localStorage.getItem('userData'));
+
+    const deleteUser = () => {
+        fetch("http://localhost:3001/users/deleteUser/userId", {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': getToken[0].token
+            }
+        });
+        window.location.reload(false);
+    }
+
+    const logout = (evt) => {
+        evt.preventDefault();
+        localStorage.clear();
+        window.location.reload(false);
+    }
+
+    return (
+            <footer>
+                {isNotLogged ? "" : <button className="buttonDeleteAccount" onClick={deleteUser}>Supprimer mon compte</button>}
+                {isNotLogged ? "" : <button className="buttonLogout" onClick={logout}>Deconnexion</button>}
+            </footer>
+    );
 }
+
+export default Footer;

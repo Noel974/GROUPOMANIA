@@ -1,75 +1,45 @@
-const express = require('express');/*** importer l'express ***/
-
-/***Importer les routes à notre application */
-/*** importer la route user ***/
-const userRoutes = require('./routes/user');
-/*** importer la route post ***/
-const postRoutes = require('./routes/post');
-/*** importer la route user ***/
-const commentRoutes = require('./routes/comment');
-
-
-require("dotenv").config();
-/*** importer helmet pour sécuriser HTTP headers ***/
+const express = require('express');
 const helmet = require("helmet");
+const createError = require('http-errors');
+require('dotenv').config()
+const models = require('./models');
+const jwt = require('jsonwebtoken');
+const app = express();
+const bodyParser = require('body-parser');
+const path = require('path');
 
-const { Sequelize } = require('sequelize');
+const newsRoutes = require('./routes/news');
+const commentsRoutes = require('./routes/comments');
+const usersRoutes = require('./routes/users');
+const likesRoutes = require('./routes/likes');
 
-// Option 3: Passing parameters separately (other dialects)
+app.use(express.json()); // Cela sert à ce que les requêtent comme "req.body" soient comprises par le serveur
 
-const sequelize = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
-  host: process.env.DB_HOST,
-  dialect: "mysql",/* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
+app.use(helmet({ crossOriginResourcePolicy: false }));
 
+
+
+// Body Parser configuration
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    next();
 });
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('La connexion a été établie avec succès.');
-  })
-  .catch(err => {
-    console.error('Impossible de se connecter à la base de données:', err);
-  });
 
-/*** importer le module express-rate-limit pour limiter le nombre de requêtes que peut faire un utilisateur ***/
-const rateLimit = require("express-rate-limit");
-//const { param } = require('../server/routes/test');
-const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000,
-  /*** pour chaque 10 minutes ***/
-  max: 40 /*** L'utilisateur pourra faire 40 requêtes toutes les 10 minutes ***/
-});
-const app = express(); /*** appeler express pour créer notre application express ***/
+const auth = require("./middleware/auth");
+const { dirname } = require('path');
 
+// ------------------------------ Routes ------------------------------
 
-/*** Middleware général/ configurer des Headers sur l'objet réponse pour eviter les erreurs du CORS (Cross Origin Resource Sharing)
-    et assurer que le front-end pourra effectuer des appels vers l'application en toute sécurité.  ***/
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
-    app.use((req, res, next) => {
-      res.setHeader('Access-Control-Allow-Origin', '*'); /*** d'accéder à notre API depuis n'importe quelle origine ***/
-      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization'); /*** d'ajouter les headers mentionnés aux requêtes envoyées vers notre API ***/
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS'); /*** d'envoyer des requêtes avec les méthodes mentionnées  ***/
-      next();
-  });
+app.use('/news', newsRoutes);
+app.use('/news', commentsRoutes);
+app.use('/users', usersRoutes);
+app.use('/news', likesRoutes);
 
-
-/*** création d'un middleware pour indiquer à Express qu'il faut gérer la ressource images de manière statique 
-(un sous-répertoire de notre répertoire de base, __dirname:nom du dossier ) à chaque fois qu'elle reçoit une requête vers la route /images ***/
-//app.use('/Images', express.static(path.join(__dirname, 'Images')));
-app.use(express.json());
-
-
-
-/*** Cette limite de 40 requêtes toutes les 10 minutes sera effective sur toutes les routes ***/
-app.use(limiter);
-
-/*** securisé les en-têtes HTTP ***/
-app.use(helmet());
-
-app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-/*** les routes attendues par le frontend ***/
-app.use('/api/auth', userRoutes);
-app.use('/api/post', postRoutes);
-app.use('/api/comment', commentRoutes);
-/*** exporter notre application pour qu'on puisse y accéder dans les autres fichiers de notre projet ***/
 module.exports = app;
