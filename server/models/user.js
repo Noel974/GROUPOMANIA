@@ -4,7 +4,11 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    
+    static associate(models){
+      models.User.hasMany(models.Publication,{
+
+      })
+    }
   };
   User.init({
     email: DataTypes.STRING,

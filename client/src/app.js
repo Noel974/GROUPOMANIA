@@ -19,7 +19,7 @@ function App() {
 
 
   let getToken = JSON.parse(localStorage.getItem('userData'));
-
+console.log(getToken)
   if (isNotLogged === true) {
     if (!getToken) {
     } else {

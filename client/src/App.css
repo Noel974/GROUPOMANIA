@@ -1,0 +1,758 @@
+.cardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.liPublication {
+  background-color: #FD2D01;
+  width: 680px;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px #FD2D01;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+  .liPublication {
+    width: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .liPublication {
+    padding: 10px 2.5%;
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.textareaCreateComment {
+  height: 80px;
+  padding: 8px 0px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  width: 100%;
+  font-size: 20px;
+}
+@media screen and (max-width: 600px) {
+  .textareaCreateComment {
+    width: 100%;
+  }
+}
+
+.textareaCreateComment:focus {
+  outline: #FFD7D7 solid 2px;
+}
+
+.nameAndSurnamePublication {
+  font-size: 20px;
+  color: #22232c;
+}
+
+.contentPublication {
+  font-size: 20px;
+  color: #4E5166;
+}
+
+.containerPublication {
+  border-bottom: solid #FFD7D7 2px;
+  padding-bottom: 10px;
+}
+
+.buttonComment {
+  background-color: #FFD7D7;
+  border: none;
+  box-shadow: 0px 0px 2px #FFD7D7;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 250ms ease-in-out;
+  margin: 20px 0px 0px 0px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.buttonComment:hover {
+  cursor: pointer;
+  background-color: #FFD7D7;
+}
+
+.buttonComment:focus {
+  outline: #4E5166 solid 2px;
+}
+
+.likeButton {
+  background-color: transparent;
+  border: none;
+  padding-right: 5px;
+}
+
+.likeButton:hover {
+  cursor: pointer;
+}
+
+.faThumbsUp {
+  color: #4E5166;
+  font-size: 22px;
+  transition: color 250ms ease-in-out;
+  margin-right: 5px;
+}
+
+.faThumbsUp:hover {
+  color: #FFD7D7;
+  cursor: pointer;
+}
+
+.faThumbsUp:active {
+  color: #4E5166;
+  cursor: pointer;
+}
+
+.dislikeButton {
+  background-color: transparent;
+  border: none;
+}
+
+.containerLikePublication {
+  display: flex;
+  font-size: 22px;
+  color: #4E5166;
+  padding: 0px 0px 5px 0px;
+}
+
+.containerComment {
+  color: #4E5166;
+  font-size: 18px;
+  padding: 0px;
+}
+
+.buttonDeletePublication {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  transition: color 250ms ease-in-out;
+  margin-right: 10px;
+}
+
+.buttonDeletePublication:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.iconUpdatePublication {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  transition: color 250ms ease-in-out;
+  margin-right: 10px;
+}
+
+.iconUpdatePublication:hover {
+  cursor: pointer;
+  color: #FFD7D7;
+}
+
+.faMinusCircle {
+  font-size: 18px;
+}
+
+.imgFeed {
+  max-width: 620px;
+}
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+  .imgFeed {
+    max-width: 490px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .imgFeed {
+    width: 100%;
+  }
+}
+
+.containerButtonsPublications {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.faEdit {
+  font-size: 20px;
+}
+
+.faMinusCircle {
+  font-size: 20px;
+}
+
+.textareaCreatePublication {
+  height: 150px;
+  padding: 8px 0px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.textareaCreatePublication:focus {
+  outline: #FFD7D7 solid 2px;
+}
+
+.containerTextareaCreatePublication {
+  background-color: #FD2D01;
+  width: 680px;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px #FD2D01;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+  .containerTextareaCreatePublication {
+    width: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .containerTextareaCreatePublication {
+    width: 100%;
+    padding: 2.5%;
+    border-radius: 5px;
+  }
+}
+
+.containerFlexbox {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 600px) {
+  .containerFlexbox {
+    width: 100%;
+  }
+}
+
+.buttonAddPublication {
+  background-color: #FFD7D7;
+  border: none;
+  box-shadow: 0px 0px 2px #FFD7D7;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 250ms ease-in-out;
+  margin: 20px 0px 0px 0px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.buttonAddPublication:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.buttonAddPublication:focus {
+  outline: black solid 2px;
+}
+
+.inputFile {
+  margin: 0;
+  width: 270px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media screen and (max-width: 600px) {
+  .inputFile {
+    width: 130px;
+  }
+}
+
+.labelUploadImage {
+  color: #4E5166;
+  font-size: 20px;
+  transition: color 250ms ease-in-out;
+}
+
+.labelUploadImage:hover {
+  cursor: pointer;
+  color: #FFD7D7;
+}
+
+.faImage {
+  margin-right: 7px;
+}
+
+.likePublication {
+  color: #4E5166;
+  font-size: 22px;
+}
+
+.labelHome {
+  margin: 10px 20px 3px 20px;
+}
+
+input {
+  padding: 8px 0px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  margin: 0px 20px;
+}
+
+input:focus {
+  outline: #FFD7D7 solid 2px;
+}
+
+.buttonSignup {
+  background-color: #FFD7D7;
+  border: none;
+  box-shadow: 0px 0px 2px #FFD7D7;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 250ms ease-in-out;
+  margin: 20px;
+}
+
+.buttonSwitchSignin {
+  background-color: #FFD7D7;
+  border: none;
+  border-top-right-radius: 30px;
+  transition: background-color 250ms ease-in-out;
+  width: 50%;
+  padding: 10px;
+}
+
+.h2Connexion {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+}
+
+.buttonSwitchSignin:hover {
+  cursor: pointer;
+  background-color: #FFD7D7;
+}
+
+.ongletSwitchSignin {
+  background-color: #FD2D01;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFD7D7;
+  border-top-left-radius: 30px;
+  transition: background-color 250ms ease-in-out;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.buttonSwitchSignin:focus {
+  outline: black solid 2px;
+}
+
+.buttonSignup:hover {
+  cursor: pointer;
+  background-color: #FFD7D7;
+}
+
+.buttonSignup:focus {
+  outline: black solid 2px;
+}
+
+.containerSignup {
+  display: flex;
+  flex-direction: column;
+  background-color: #FD2D01;
+  box-shadow: 0px 0px 5px #FD2D01;
+  border-radius: 30px;
+  color: black;
+  width: 340px;
+}
+@media screen and (max-width: 600px) {
+  .containerSignup {
+    width: 100%;
+  }
+}
+
+.formIndex {
+  display: flex;
+  justify-content: center;
+}
+
+.divSwitchSignin {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.errorRegister {
+  margin: 10px 20px 3px 20px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  border: solid 5px red;
+  background-color: #E69494;
+}
+
+.succesRegister {
+  margin: 10px 20px 3px 20px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  border: solid 5px #FFD7D7;
+}
+
+header {
+  background-color: #FD2D01;
+  width: 100vw;
+  display: flex;
+  padding: 10px 50px;
+  margin-bottom: 20px;
+}
+
+.imgHeader {
+  background-color: #FD2D01;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+  .imgHeader > img {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .imgHeader > img {
+    width: 150px;
+  }
+}
+
+.labelHome {
+  margin: 10px 20px 3px 20px;
+}
+
+input {
+  padding: 8px 0px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  margin: 0px 20px;
+}
+
+input:focus {
+  outline: #FFD7D7 solid 2px;
+}
+
+.buttonSignin {
+  background-color: #FFD7D7;
+  border: none;
+  box-shadow: 0px 0px 2px #FFD7D7;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 250ms ease-in-out;
+  margin: 20px;
+}
+
+.h2Inscription {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+}
+
+.buttonSwitchSignup {
+  background-color: #FFD7D7;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+  border-top-left-radius: 30px;
+  transition: background-color 250ms ease-in-out;
+  width: 50%;
+  padding: 10px;
+}
+
+.buttonSwitchSignup:hover {
+  cursor: pointer;
+  background-color: #FFD7D7;
+}
+
+.ongletSwitchSignup {
+  background-color: #FD2D01;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFD7D7;
+  border-top-right-radius: 30px;
+  transition: background-color 250ms ease-in-out;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.buttonSwitchSignup:focus {
+  outline: black solid 2px;
+}
+
+.buttonSignin:hover {
+  cursor: pointer;
+  background-color: #FFD7D7;
+}
+
+.buttonSignin:focus {
+  outline: #4E5166 solid 2px;
+}
+
+.containerSignin {
+  display: flex;
+  flex-direction: column;
+  background-color: #FD2D01;
+  box-shadow: 0px 0px 5px #FD2D01;
+  border-radius: 30px;
+  color: #4E5166;
+  width: 340px;
+}
+@media screen and (max-width: 600px) {
+  .containerSignin {
+    width: 100%;
+  }
+}
+
+.formIndex {
+  display: flex;
+  justify-content: center;
+}
+
+.divSwitchSignup {
+  display: flex;
+}
+
+.liComment {
+  list-style-type: none;
+  padding-top: 5px;
+  font-size: 18px;
+  background-color: white;
+  margin: 10px 0px;
+  border-radius: 10px;
+  padding: 10px;
+  transition: background-color 250ms ease-in-out;
+}
+
+.liComment:hover {
+  background-color: #f2f2f2;
+}
+
+.nameAndSurnameComment {
+  color: #262626;
+}
+
+.contentComment {
+  color: #0d0d0d;
+}
+
+.buttonDeleteComment {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  transition: color 250ms ease-in-out;
+}
+
+.buttonDeleteComment:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.buttonUpdateComment {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  transition: color 250ms ease-in-out;
+}
+
+.buttonUpdateComment:hover {
+  cursor: pointer;
+  color: #FFD7D7;
+}
+
+.faMinusCircle {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.containerButtonsComments {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonUpdateCommentSubmit {
+  background-color: #FFD7D7;
+  border: none;
+  box-shadow: 0px 0px 2px #FFD7D7;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 250ms ease-in-out;
+  margin: 20px 0px 0px 0px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.buttonUpdateCommentSubmit:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.textareaUpdateComment {
+  height: 80px;
+  padding: 8px 0px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  width: 100%;
+  font-size: 20px;
+  margin: 10px 0 0 0;
+}
+@media screen and (max-width: 600px) {
+  .textareaUpdateComment {
+    width: 100%;
+  }
+}
+
+.containerUpdatePublication {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textareaUpdatePublication {
+  height: 80px;
+  padding: 8px 0px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  width: 100%;
+  font-size: 20px;
+  margin: 10px 0 0 0;
+}
+@media screen and (max-width: 600px) {
+  .textareaUpdatePublication {
+    width: 100%;
+  }
+}
+
+.textareaUpdatePublication:focus {
+  outline: #FFD7D7 solid 2px;
+}
+
+.buttonUpdatePublication {
+  background-color: #FFD7D7;
+  border: none;
+  box-shadow: 0px 0px 2px #FFD7D7;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FD2D01;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 250ms ease-in-out;
+  margin: 20px 0px 0px 0px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.buttonUpdatePublication:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.labelUpdateImage {
+  color: black;
+  font-size: 20px;
+  transition: color 250ms ease-in-out;
+  margin-top: 10px;
+}
+
+.labelUpdateImage:hover {
+  cursor: pointer;
+  color: #FFD7D7;
+}
+
+footer {
+  background-color: #FD2D01;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 50px;
+}
+
+.buttonDeleteAccount {
+  background-color: #9E0000;
+  color: white;
+  font-size: 20px;
+  border: none;
+  box-shadow: 2px 2px 2px black;
+  transition: background-color 250ms ease-in-out;
+  padding: 5px;
+  margin: 0 0 10px 0;
+}
+
+.buttonDeleteAccount:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.buttonLogout {
+  background-color: #FFD7D7;
+  color: white;
+  font-size: 20px;
+  border: none;
+  box-shadow: 2px 2px 2px black;
+  transition: background-color 250ms ease-in-out;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.buttonLogout:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h3, h4 {
+  font-weight: normal;
+}
+
+button {
+  font-size: 18px;
+}/*# sourceMappingURL=App.css.map */

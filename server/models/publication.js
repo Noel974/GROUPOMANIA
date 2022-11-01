@@ -4,6 +4,15 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Publication extends Model {
+    static associate(models) {
+      // define association here
+      models.Publication.belongsTo(models.User, {
+        allowNull: false,
+        foreignKey: "idUSERS",
+        onDelete: 'cascade',
+        hooks: true,
+      });
+    }
     
   };
   Publication.init({

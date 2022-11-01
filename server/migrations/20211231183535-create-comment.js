@@ -14,7 +14,9 @@ module.exports = {
         references: {
           model: 'Users',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       publications_idpublications: {
         allowNull: false,
@@ -22,7 +24,9 @@ module.exports = {
         references: {
           model: 'Publications',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       content: {
         allowNull: false,
